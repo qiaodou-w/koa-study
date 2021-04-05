@@ -14,7 +14,7 @@ router.prefix('/users')
  */
 router.get('/test', ctx => {
   ctx.status = 200
-  ctx.body = 'test'
+  ctx.body = 'hello '
 })
 
 
