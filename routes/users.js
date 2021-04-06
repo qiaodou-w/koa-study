@@ -98,10 +98,8 @@ router.post('/login', async ctx => {
  */
 
 router.get('/current', passport.authenticate('jwt', { session: false }),async  ctx => {
-  ctx.body = {
-    id: ctx.state.user.id,
-    name: ctx.state.user.name
-  }
+  ctx.body = JSON.parse(JSON.stringify(ctx.state.user))
+  delete ctx.body.password
 })
 
 module.exports = router
